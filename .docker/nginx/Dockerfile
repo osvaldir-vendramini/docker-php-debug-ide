@@ -3,7 +3,7 @@ FROM nginx:alpine
 # Instalar inotify-tools
 RUN apk add --no-cache inotify-tools
 
-# Adicionar o arquivo de configuração do Nginx (opcional)
+# Adicionar o arquivo de configuração do Nginx
 ADD .docker/nginx/nginx.conf /etc/nginx/conf.d
 ADD .docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
