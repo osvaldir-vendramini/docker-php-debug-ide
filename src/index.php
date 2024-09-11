@@ -5,27 +5,32 @@ class Produto {
     private $nome;
     private $preco;
 
-    public function __construct($id, $nome, $preco) {
+    public function __construct($id, $nome, $preco)
+    {
         $this->id = $id;
         $this->nome = $nome;
         $this->preco = $preco;
     }
 
     // Getters
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
 
-    public function getPreco() {
+    public function getPreco()
+    {
         return $this->preco;
     }
 
     // Exibir detalhes do produto
-    public function exibirDetalhes() {
+    public function exibirDetalhes()
+    {
         return "ID: " . $this->id . " | Nome: " . $this->nome . " | Preço: R$" . number_format($this->preco, 2);
     }
 }
@@ -36,18 +41,21 @@ class Pedido {
     private $produtos = [];
     private $status;
 
-    public function __construct($id) {
+    public function __construct($id)
+    {
         $this->id = $id;
         $this->status = 'Pendente'; // Status inicial do pedido
     }
 
     // Adicionar produto ao pedido
-    public function adicionarProduto(Produto $produto) {
+    public function adicionarProduto(Produto $produto)
+    {
         $this->produtos[] = $produto;
     }
 
     // Remover produto do pedido
-    public function removerProduto($idProduto) {
+    public function removerProduto($idProduto)
+    {
         foreach ($this->produtos as $index => $produto) {
             if ($produto->getId() === $idProduto) {
                 unset($this->produtos[$index]);
@@ -58,7 +66,8 @@ class Pedido {
     }
 
     // Calcular o total do pedido
-    public function calcularTotal() {
+    public function calcularTotal()
+    {
         $total = 0;
         foreach ($this->produtos as $produto) {
             $total += $produto->getPreco();
@@ -67,7 +76,8 @@ class Pedido {
     }
 
     // Exibir detalhes do pedido
-    public function exibirPedido() {
+    public function exibirPedido()
+    {
         echo "Pedido ID: " . $this->id . "\n";
         echo "Status: " . $this->status . "\n";
         echo "Produtos no pedido:\n";
@@ -78,7 +88,8 @@ class Pedido {
     }
 
     // Alterar status do pedido
-    public function alterarStatus($novoStatus) {
+    public function alterarStatus($novoStatus)
+    {
         $this->status = $novoStatus;
     }
 }

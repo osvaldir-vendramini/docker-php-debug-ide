@@ -1,1 +1,1 @@
-docker-compose up --build -d php
+docker-compose up --build -d

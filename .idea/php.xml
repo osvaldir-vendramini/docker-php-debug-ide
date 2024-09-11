@@ -10,15 +10,6 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
-  <component name="PhpProjectServersManager">
-    <servers>
-      <server host="_" id="833c121b-8bf5-4970-bc46-4b99e1807c2b" name="php" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$/src" remote-root="/var/www/html" />
-        </path_mappings>
-      </server>
-    </servers>
-  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

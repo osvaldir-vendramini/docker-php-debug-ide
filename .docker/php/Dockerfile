@@ -1,14 +1,16 @@
 # Usa a imagem base php:fpm-alpine
 FROM php:fpm-alpine
 
-# Atualiza pacotes do sistema e instala dependências necessárias, incluindo autoconf para Xdebug
+# Atualiza pacotes do sistema e instala dependências necessárias, incluindo autoconf, phpize e libtool para Xdebug
 RUN apk update && apk add --no-cache \
     bash \
     autoconf \
     g++ \
     make \
+    libtool \
     oniguruma-dev \
-    linux-headers
+    linux-headers \
+    $PHPIZE_DEPS
 
 # Instala apenas as extensões necessárias (neste caso, mbstring)
 RUN docker-php-ext-install mbstring

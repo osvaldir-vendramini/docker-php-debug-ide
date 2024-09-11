@@ -1,4 +1,4 @@
-# curl -X GET --location "http:// localhost:8080" \ -H "Content-Type: application/ json"
+# curl -X GET --location "http://localhost:8080" -H "Content-Type: application/ json"
 GET http://localhost:8080
 Content-Type: application/json
 ###'

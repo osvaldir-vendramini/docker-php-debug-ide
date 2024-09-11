@@ -12,23 +12,17 @@ services:
       - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     networks:
       - internal-test-docker-php
-
   php:
     build:
       context: .
       dockerfile: .docker/php/Dockerfile
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     image: php:fpm-alpine
     environment:
       PHP_IDE_CONFIG: "serverName=php"
     volumes:
       - ./src:/var/www/html
-    expose:
-      - 9003
     networks:
       - internal-test-docker-php
-
 networks:
   internal-test-docker-php:
     driver: bridge
